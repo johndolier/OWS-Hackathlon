@@ -2,6 +2,17 @@
 // This file is part of the Prototype Search Application
 // --------------------------------------------------------- */
 
+:root {
+  --background-color-light: #ffffff;
+  --text-color-light: #000000;
+  --background-color-dark: #444;
+  --text-color-dark: #ffffff;
+}
+
+body {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
 
 div.mainbody
 {
@@ -10,8 +21,8 @@ div.mainbody
 
 div.menubar
 {
-  background: #444;
-  color: #ddd;
+  background: rgb(114,114,114);
+  color: white;
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
@@ -21,6 +32,12 @@ span.menubrand
   margin-left: 0.5em;
   font-weight: 600; 
   margin-right: 0.5em;
+}
+
+#searchcontrol{
+border: 1px #ccc;
+padding: 0.5em;
+background: #eeeeee;
 }
 
 h3
@@ -43,5 +60,52 @@ div.info
 {
 	font-style: italic;
 	color: #585;
-	
+}
+
+.col-3{
+  float: right;
+  margin-left: auto;
+}
+
+.mode-button
+{
+  background-color: #eeeeee;
+  color: black;
+  float: right;
+  margin-left: auto;
+  padding: 6px;
+  border: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.mode-button:hover
+{
+  background-color: #444;
+  color: rgb(255, 255, 255);
+}
+
+
+/* ---------------------------------------------------------
+// This is for dark mode
+// --------------------------------------------------------- */
+
+.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+.dark-mode .mode-button{
+  background-color: #353535;
+  color: #eeeeee;
+}
+
+.dark-mode .mode-button:hover
+{
+  background-color: #eeeeee;
+  color: rgb(0, 0, 0);
+}
+
+.dark-mode #searchcontrol{
+  background: #353535;
 }

@@ -76,11 +76,11 @@ function doSearch ()
 
   // get the search parameters from the ui
   var searchterm = $("#searchterm").val ().trim ();
-  var optionindex = $('input[name="option-index"]:checked').val();
+  var optionindex = "default";
   //var optionranking = $('input[name="option-ranking"]:checked').val();
   var keyword = $("#keyword").val ().trim ();
   var optionlang= $('input[name="option-language"]:checked').val();
-  var optionlimit = $('input[name="option-limit"]:checked').val();
+  var optionlimit = "default";
   if (logging_) console.log ("searchterm: " + searchterm);
   if (logging_) console.log ("options: " + optionindex + ", " + keyword + ", " + optionlang + ", " + optionlimit);
   if (searchterm == "")
@@ -101,7 +101,7 @@ function doSearch ()
   if (logging_) console.log (searchurl); 
   
   
-  var geoboxwest = $("#geobox-west").val ().trim ();
+  /*var geoboxwest = $("#geobox-west").val ().trim ();
   var geoboxeast= $("#geobox-east").val ().trim ();
   var geoboxnorth= $("#geobox-north").val ().trim ();
   var geoboxsouth = $("#geobox-south").val ().trim ();
@@ -110,7 +110,7 @@ function doSearch ()
   {
     var geourlsection = "&west=" + geoboxwest + "&east=" + geoboxeast + "&north=" + geoboxnorth + "&south=" + geoboxsouth;
     searchurl += geourlsection;
-  }
+  }*/
 
   
   // do the query and build result html
@@ -251,3 +251,9 @@ function pad(n)
   return n<10 ? '0'+n : n
 }
 
+
+//Toggle Dark Mode
+function toggleDarkMode()
+{
+  document.body.classList.toggle('dark-mode');
+}
