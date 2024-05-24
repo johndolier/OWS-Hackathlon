@@ -1,0 +1,35 @@
+
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    networks:
+      - my-network
+    ports:
+      - "5555:5555"
+
+  frontend:
+    build: 
+      context: ./front-end
+      dockerfile: Dockerfile
+    networks:
+      - my-network
+    container_name: frontend
+    ports:
+      - "80:80"
+
+  mosaic:
+    image: opencode.it4i.eu:5050/openwebsearcheu-public/mosaic
+    container_name: mosaic
+    networks:
+      - my-network
+    ports:
+      - "8080:80"
+
+networks:
+  my-network:
+    driver: bridge
