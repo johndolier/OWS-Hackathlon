@@ -6,5 +6,5 @@ if [ "$1" == "-b" ]; then
     docker build -t ows-hackathlon-backend .
 fi
 
-docker run -p 80:80 ows-hackathlon-backend
+docker run -p 5555:80 ows-hackathlon-backend
 
