@@ -78,8 +78,8 @@ function doSearch ()
   var searchterm = $("#searchterm").val ().trim ();
   var optionindex = "default";
   //var optionranking = $('input[name="option-ranking"]:checked').val();
-  var keyword = $("#keyword").val ().trim ();
-  var optionlang= $('input[name="option-language"]:checked').val();
+  var keyword = "";
+  var optionlang= "default";
   var optionlimit = "default";
   if (logging_) console.log ("searchterm: " + searchterm);
   if (logging_) console.log ("options: " + optionindex + ", " + keyword + ", " + optionlang + ", " + optionlimit);
