@@ -10,6 +10,7 @@
     <meta name="description" content="Demonstration front-end to the Prototype Search Application">
     <meta name="keywords" content="OpenWebSearch.eu, search applicaiton">
     <meta name="author" content="Alexander Nussbaumer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>MOSAIC</title>
 
@@ -31,13 +32,14 @@
 
         <div class="container-fluid mainbody">
 
-            <div id="searchcontrol" style="border: solid 1px #ccc; padding: 0.5em; background: #f8f8f8;">
+            <div id="searchcontrol">
 
                 <div class="form-inline mb-3">
                     <label class="mr-2" for="searchterm"><b>Search term:</b></label>
                     <input type="text" class="col-sm-6 form-control form-control-sm" id="searchterm">
                     <button type="submit" onclick="doSearch()" class="btn btn-info btn-sm ml-1">Search</button>
                     <button type="submit" onclick="indexInfo()" class="btn btn-warning btn-sm ml-4">Index Info</button>
+                    <button onclick="toggleDarkMode()" class="mode-button"><i class="fa fa-moon-o"></i></button>
                 </div>
 
                 <div class="row mb-3">

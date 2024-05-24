@@ -251,3 +251,9 @@ function pad(n)
   return n<10 ? '0'+n : n
 }
 
+
+//Toggle Dark Mode
+function toggleDarkMode()
+{
+  document.body.classList.toggle('dark-mode');
+}
