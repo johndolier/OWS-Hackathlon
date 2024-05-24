@@ -1,3 +1,4 @@
 fastapi
 pydantic
 huggingface_hub
+langchain
