@@ -4,11 +4,21 @@ from .models import Item
 from .webQuery import *
 from fastapi import FastAPI
 from huggingface_hub import InferenceClient
+from fastapi.middleware.cors import CORSMiddleware
+
 # import uvicorn
 
 app = FastAPI()
 client = InferenceClient("mistralai/Mistral-7B-Instruct-v0.2") # use any other model if required
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #########
 ### FRONTEND ENDPOINTS
@@ -26,6 +36,10 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 @app.get("/search")
 def search(q: str):
+    print("got a request")
+    results = requests.get(f"https://qnode.eu/ows/mosaic/service/search?q={q}&limit=10").json()
+    print(results)
+    return results
     results = make_web_query(query=q)
     return results
 
